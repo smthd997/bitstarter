@@ -1,12 +1,13 @@
 var express = require('express')
 var app = express();
 var fs = require('fs')
+var buf = fs.readFileSync("~/bitstarter/index.html")
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-  response.send(fs.readFileSync(~/bitstarter/index.html,encoding).toString())
+  response.send(buf.toString('utf8',0,b)
 })
 
 app.listen(app.get('port'), function() {
